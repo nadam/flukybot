@@ -1,4 +1,5 @@
 <html>
+<!-- The license of this page is Apache License 2.0 (http://www.apache.org/licenses/LICENSE-2.0) -->
 <head>
   <title>Flukybot</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -7,9 +8,11 @@
 
 <body>
   <h1>Run a Bot locally in your browser</h1>
-  <p>This page will run a Telegram bot locally in your web browser. Just enter your bot token and then press the Start button. Press the button again or reload the page to stop the bot.</p>
+  <p>This page will run a Telegram bot locally in your web browser. Just enter your bot token from <a href="https://telegram.me/botfather">BotFather</a> and press the Start button. Press the button again or reload the page to stop the bot.</p>
+  <p>The source code of this bot is also <a href="https://github.com/nadam/flukybot">available on Github</a>.
+  <br><br>
   <label for="token">Bot token</label><br>
-  <input id="token" type="text" placeholder="Paste your bot token from @botfather here" size=60 /><br><br>
+  <input id="token" type="text" placeholder="Paste your bot token from @BotFather here" size=60 /><br><br>
   <button id="startStop" type="button" onclick="startBot()">Start</button>
   <p id="output"></p>
   <script>
@@ -208,7 +211,7 @@ function call(method, params, onResponse, onError, timeout) {
   xhr.timeout = timeout ? timeout * 1000 : 15000;
   xhr.ontimeout = function() {
     if (onError) {
-       onError(-1, "Timeout");
+      onError(-1, "Timeout");
     } else {
       log(method + ": Timeout");
     }
